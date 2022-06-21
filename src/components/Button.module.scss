@@ -1,111 +1,111 @@
  // button styles mixin 
  @mixin buttonStyles ($color) {
-    border: none;
-    width: 200px;
-    height: 50px;
-    background: $color;
-    color: $color-white;
-    font-size: $font-md;
-    position: fixed;
-    transition: all 0.5s ease;
-    opacity: 0;
-    border-radius: 10px;
-  }
+  border: none;
+  width: 200px;
+  height: 50px;
+  background: $color;
+  color: $color-white;
+  font-size: $font-md;
+  position: fixed;
+  transition: all 0.5s ease;
+  opacity: 0;
+  border-radius: 10px;
+}
 
-  // conditional animation styling per button
+// conditional animation styling per button
 
-  @mixin fadeIn ($direction) {
-    @if $direction == 'right' {
-        animation: fadeInRight 1s ease forwards;
-    }
-    @if $direction == 'left' {
-        animation: fadeInLeft 1s ease forwards;
-    }
+@mixin fadeIn ($direction) {
+  @if $direction == 'right' {
+      animation: fadeInRight 1s ease forwards;
   }
+  @if $direction == 'left' {
+      animation: fadeInLeft 1s ease forwards;
+  }
+}
 
-  @mixin fadeOut ($direction) {
-    @if $direction == 'right' {
-        animation: fadeOutRight 1s ease forwards;
-    }
-    @if $direction == 'left' {
-        animation: fadeOutLeft 1s ease forwards;
-    }
+@mixin fadeOut ($direction) {
+  @if $direction == 'right' {
+      animation: fadeOutRight 1s ease forwards;
   }
+  @if $direction == 'left' {
+      animation: fadeOutLeft 1s ease forwards;
+  }
+}
 
 // Fade In & Out animation
- 
-  @keyframes fadeInRight {
-    0% {
-        opacity: 0;
 
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(200px);
-    }
-  }     
+@keyframes fadeInRight {
+  0% {
+      opacity: 0;
 
-  @keyframes fadeInLeft {
-    0% {
-        opacity: 0;
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(30%);
+  }
+}     
 
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(-200px);
-    }
+@keyframes fadeInLeft {
+  0% {
+      opacity: 0;
+
   }
-  
-  @keyframes fadeOutRight {
-    0% {
-        opacity: 1;
-        transform: translateX(200px);
-    }
-    100% {
-        opacity: 0;
-        transform: translateX(0);
-    }
+  100% {
+      opacity: 1;
+      transform: translateX(-30%);
   }
-  @keyframes fadeOutLeft {
-    0% {
-        opacity: 1;
-        transform: translateX(-200px);
-    }
-    100% {
-        opacity: 0;
-        transform: translateX(0);
-    }
+}
+
+@keyframes fadeOutRight {
+  0% {
+      opacity: 1;
+      transform: translateX(30%);
   }
+  100% {
+      opacity: 0;
+      transform: translateX(0);
+  }
+}
+@keyframes fadeOutLeft {
+  0% {
+      opacity: 1;
+      transform: translateX(-30%);
+  }
+  100% {
+      opacity: 0;
+      transform: translateX(0);
+  }
+}
 
 //   End of Fade In & Out Animation
 
 // add & remove class for fade in & out
-  .fadeMoveRight {
-    @include fadeIn('right');
-  }
+.fadeMoveRight {
+  @include fadeIn('right');
+}
 
-  .fadeMoveLeft {
-    @include fadeIn('left');
-  }
+.fadeMoveLeft {
+  @include fadeIn('left');
+}
 
-  .fadeOutRight {
-    @include fadeOut('right');
-  }
+.fadeOutRight {
+  @include fadeOut('right');
+}
 
-  .fadeOutLeft {
-    @include fadeOut('left');
-  }
+.fadeOutLeft {
+  @include fadeOut('left');
+}
 
-  // facebook & instagram individual button
+// facebook & instagram individual button
 
-  .facebook {
-    @include buttonStyles($color-facebook);
-    top: 50%;
-    left:10%;
-  }      
+.facebook {
+  @include buttonStyles($color-facebook);
+  top: 50%;
+  left:10%;
+}      
 
-  .instagram {
-    @include buttonStyles($color-instagram);
-    top: 40%;
-    right: 10%;        
-  }      
+.instagram {
+  @include buttonStyles($color-instagram);
+  top: 40%;
+  right: 10%;        
+}      
